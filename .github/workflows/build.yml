@@ -50,7 +50,7 @@ jobs:
           "$(python -c "import platform;print(platform.python_version())")" \
           >> $GITHUB_ENV
       - name: Cache linting environments
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             ${{ env.PIP_CACHE_DIR }}
@@ -180,7 +180,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Cache Docker layers
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: ${{ env.BUILDX_CACHE_DIR }}
           key: buildx-${{ runner.os }}-${{ github.sha }}
@@ -244,7 +244,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Cache Docker layers
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: ${{ env.BUILDX_CACHE_DIR }}
           key: buildx-${{ runner.os }}-${{ github.sha }}
@@ -309,7 +309,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Cache pip test requirements
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: ${{ env.PIP_CACHE_DIR }}
           key: "test-${{ runner.os }}-\
@@ -354,7 +354,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Cache pip test requirements
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: ${{ env.PIP_CACHE_DIR }}
           key: "test-${{ runner.os }}-\
@@ -409,7 +409,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Cache Docker layers
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: ${{ env.BUILDX_CACHE_DIR }}
           key: buildx-${{ runner.os }}-${{ github.sha }}
